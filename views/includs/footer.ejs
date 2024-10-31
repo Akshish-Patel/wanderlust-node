@@ -1,0 +1,30 @@
+<footer class="footer">
+    <div class="icons">  <a><i class="fa-brands fa-square-facebook"></i></a>  <a><i class="fa-brands fa-square-instagram"></i></a>  <a><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="name">  <a> &copy; Wanderlust Private Limited</a>
+    </div>
+    <div class="info">  <a> Privacy Terms</a>
+    </div>
+</footer>
+
+<script>
+   (function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>

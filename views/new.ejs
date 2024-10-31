@@ -1,0 +1,83 @@
+<%- include("../views/layout/boilerplate.ejs") %>
+
+    <body>
+        <%- include("../views/includs/navbar.ejs")%>
+        <%- include("../views/includs/flash.ejs")%>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 " style="margin: auto;">
+                        <h3>Create New Listing</h3>
+                        <form action="/listing/new" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+
+                            <div class="form-group mb-3">
+                                <label for="title">Title</label>
+                                <input type="text" required placeholder="Add a catchy title" id="title" class="form-control"
+                                    name="listing[title]" >
+                                    <div class="invalid-feedback">
+                                        Title is Required!
+                                      </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="description">Description</label>
+                                <textarea name="listing[description]" id="description" class="form-control" required></textarea>
+                                <div class="invalid-feedback">
+                                    Description is Required!
+                                  </div>
+                            </div>
+
+                            <!-- <div class="form-group mb-3">
+                                <label for="image">Image Link</label>
+                                <input type="text" name="listing[url]" id="image" placeholder="Enter image URL/Link"
+                                    class="form-control">
+                            </div> -->
+
+                            <div class="form-group mb-3">
+                                <label for="image">Upload Listing Image</label>
+                                <input type="file" name="listing[url]" id="image" placeholder="Enter image URL/Link"
+                                    class="form-control">
+                            </div>
+
+                                <div class="row m-0 p-0">
+                                    <div class="form-group col-md-4 mb-3">
+                                        <label for="price">Price</label>
+                                        <input type="number" name="listing[price]" placeholder="Enter price" class="form-control" style="width: 100%;" required>
+                                        <div class="invalid-feedback">
+                                            Price is Required!
+                                          </div>
+                                    </div>
+
+                                    <div class="form-group col-md-7 mb-3">
+                                        <label for="country">country</label>
+                                        <input type="text" name="listing[country]" id="country" placeholder="enter country"
+                                            class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Country is Required!
+                                              </div>
+                                    </div>
+                                </div>
+
+                            <div class="location mb-3">
+                                <label for="location">Location</label>
+                                <input type="text" name="listing[location]" placeholder="enter location" id="location"
+                                    class="form-control" value="Surat, Gujarat" required>
+                                    <div class="invalid-feedback">
+                                        Location is Required!
+                                      </div>
+                            </div>
+                    
+                            <div class="form-group mt-3">
+                                <button class="btn button">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <%- include("../views/includs/footer.ejs") %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                    crossorigin="anonymous"></script>
+    </body>
+
+    </html>
