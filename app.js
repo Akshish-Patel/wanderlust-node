@@ -94,8 +94,8 @@ app.use((req, res, next) => {
 // home rout 
 app.get("/", async (req, res) => {
 
-    // let listings = await Listing.find({});
-    res.send("Hi, i am root!")
+    let listings = await Listing.find({});
+    res.render("home.ejs", { listings })
 });
 
 
